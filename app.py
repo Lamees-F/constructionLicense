@@ -44,18 +44,18 @@ start_date = st.date_input("اختر تاريخ بداية التوقع")
 period = st.selectbox("اختر فترة التوقع:", ['يومي', 'أسبوعي', 'شهري'])
 
 municipality = st.selectbox("اختر البلدية:", encoders['البلدية'].classes_)
-request_type = st.selectbox("اختر نوع الطلب:", encoders['نوع الطلب'].classes_)
+request_type = st.selectbox("اختر الغرض:", encoders['الغرض'].classes_)
 # immediate = st.selectbox("فوري أو غير فوري:", encoders['فوري / غير فوري'].classes_)
 ownership_type = st.selectbox("نوع سند الملكية:", encoders['نوع سند الملكية'].classes_)
-main_use = st.selectbox("استخدام المبنى الرئيسي:", encoders['إستخدام المبنى الرئيسي'].classes_)
+# main_use = st.selectbox("استخدام المبنى الرئيسي:", encoders['إستخدام المبنى الرئيسي'].classes_)
 # license_duration = st.selectbox("فئة مدة صلاحية الرخصة:", encoders['فئة مدة صلاحية الرخصة'].classes_)
 
 try:
     municipality_code = encoders['البلدية'].transform([municipality])[0]
-    request_type_code = encoders['نوع الطلب'].transform([request_type])[0]
+    request_type = encoders['الغرض'].transform([request_type])[0]
     # immediate_code = encoders['فوري / غير فوري'].transform([immediate])[0]
     ownership_code = encoders['نوع سند الملكية'].transform([ownership_type])[0]
-    main_use_code = encoders['إستخدام المبنى الرئيسي'].transform([main_use])[0]
+    # main_use_code = encoders['إستخدام المبنى الرئيسي'].transform([main_use])[0]
     # license_duration_code = encoders['فئة مدة صلاحية الرخصة'].transform([license_duration])[0]
 except Exception as e:
     st.error(f"خطأ في التشفير: {e}")
@@ -70,10 +70,10 @@ def create_input_df(date):
 
     data = {
         'البلدية': [municipality_code],
-        'نوع الطلب': [request_type_code],
+        'الغرض': [request_type],
         # 'فوري / غير فوري': [immediate_code],
         'نوع سند الملكية': [ownership_code],
-        'إستخدام المبنى الرئيسي': [main_use_code],
+        # 'إستخدام المبنى الرئيسي': [main_use_code],
         # 'فئة مدة صلاحية الرخصة': [license_duration_code],
         'سنة الطلب': [year],
         'شهر الطلب': [month],
