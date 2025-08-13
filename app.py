@@ -21,7 +21,7 @@ st.markdown("""
         }
     </style>
 """, unsafe_allow_html=True)
-
+st.sidebar.image("logo.jpg", use_container_width=True)
 st.sidebar.title("نبذة عن المشروع")
 st.sidebar.info("""
 هذا التطبيق يتيح لك توقع عدد طلبات الرخص الإنشائية التي قد تصدرها أمانة منطقة عسير بناءً على بيانات السنوات السابقة.
