@@ -82,7 +82,7 @@
 
 يمكنك تجربة النظام مباشرة عبر الرابط التالي على منصة Streamlit:  
 [رابط التطبيق](https://commerciallicenses-cbppacvkvv2jya3fvb2t32.streamlit.app/)
-<img width="1919" height="1021" alt="image" src="https://github.com/user-attachments/assets/367cdd22-ef45-4cbe-903a-c7976d7164b1" />
+<img width="1919" height="1013" alt="image" src="https://github.com/user-attachments/assets/c70cb460-a355-4a9e-af30-5d0bbcb70587" />
 
 
 
